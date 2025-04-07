@@ -1,0 +1,5 @@
+#!/usr/bin/python
+str = "Holberton school"
+print (f"{str}")
+print (f"{str}")
+print (f"{str}")
