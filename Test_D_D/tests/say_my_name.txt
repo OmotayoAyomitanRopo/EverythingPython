@@ -1,0 +1,10 @@
+>>> from name import say_my_name
+
+>>> say_my_name("Ayo", "Mitan")
+my name is Ayo Mitan
+
+>>> say_my_name("", "Mitan")
+my name is  Mitan
+
+>>> say_my_name("", "")
+my name is   
