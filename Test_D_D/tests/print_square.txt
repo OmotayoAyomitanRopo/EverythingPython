@@ -1,0 +1,5 @@
+>>> from print_square import Print_square
+
+>>> Print_square(2)
+##
+##
