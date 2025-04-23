@@ -1,0 +1,12 @@
+>>> from Split_char import text_indentation
+
+>>> text_indentation("Hello. How are you? I am fine: thanks.")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I am fine:
+<BLANKLINE>
+thanks.
+<BLANKLINE>
+<BLANKLINE>
