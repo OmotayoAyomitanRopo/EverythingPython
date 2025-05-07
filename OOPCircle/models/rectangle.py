@@ -86,3 +86,11 @@ class Rectangle(Base):
     # Overides string method
     def __str__(self):
         return f"[Rectangle] ({self.id}) ({self.x})/({self.y}) - ({self.width})/({self.height})"
+
+    # assign each postional arguments to corresponding attribute
+    def update(self, *args):
+        attributes = ["id", "width", "height", "x", "y"]
+
+        for i, value in enumerate(args):
+            if i < len(attributes):
+                setattr(self, attributes[i], value)
