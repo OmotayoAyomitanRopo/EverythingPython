@@ -77,8 +77,11 @@ class Rectangle(Base):
 
     # A display method that print rectangle instance
     def display(self):
+
+        print("\n" * self.y, end="")
+
         for i in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
     
     # Overides string method
     def __str__(self):
