@@ -30,6 +30,14 @@ class Square(Rectangle):
             if hasattr(self, key):
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        return {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+            }
+
     def __str__(self):
         return f"[square] ({self.id}) ({self.x})/({self.y}) - ({self.size})"
 
