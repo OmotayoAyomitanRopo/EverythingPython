@@ -20,6 +20,16 @@ class Square(Rectangle):
             raise ValueError("size must be greater than 0")
         self.__size = value
 
+    # Assigning postional args to attribute
+    def update(self, *args, **kwargs):
+        attribute = ["id", "size", "x", "y"]
+        for i, value in enumerate(args):
+            if i < len(attribute):
+                setattr(self, attribute[i], value)
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+
     def __str__(self):
         return f"[square] ({self.id}) ({self.x})/({self.y}) - ({self.size})"
 
