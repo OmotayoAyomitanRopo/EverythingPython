@@ -26,7 +26,14 @@ class Base:
         if list_objs is not None:
             obj_dicts = [obj.to_dictionary() for obj in list_objs]
 
+
         json_string = cls.to_json_string(obj_dicts)
 
         with open(filename, "w", encoding="utf-8") as f:
             f.write(json_string)
+    
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or json_string == "":
+            return [] # Returns an empty list
+        return json.loads(json_string) #returns the list of the JSON string representation
