@@ -37,3 +37,11 @@ class Base:
         if json_string is None or json_string == "":
             return [] # Returns an empty list
         return json.loads(json_string) #returns the list of the JSON string representation
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
+
+
