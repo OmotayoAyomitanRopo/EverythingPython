@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import json
+import os
 """ Claas module
 """
 class Base:
@@ -40,8 +41,21 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        dummy = cls(1, 1)
+        dummy = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         dummy.update(**dictionary)
         return dummy
+    
+    @classmethod
+    def load_from_file(cls):
+        filename = f"{cls.__name__}.json"
+
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, 'r', encoding='utf-8') as f:
+            json_string = f.read()
+
+        list_dicts = cls.from_json_string(json_string)
+        return [cls.create(**d) for d in list_dicts]
 
 
